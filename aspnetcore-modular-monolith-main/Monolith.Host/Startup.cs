@@ -12,6 +12,8 @@ namespace Monolith.Host
 {
     public class Startup
     {
+        //https://www.thinktecture.com/en/asp-net-core/modular-monolith/
+        //https://github.com/thinktecture-labs/aspnetcore-modular-monolith
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
