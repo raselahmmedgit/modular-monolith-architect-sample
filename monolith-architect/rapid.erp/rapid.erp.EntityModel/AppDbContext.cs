@@ -42,7 +42,7 @@ namespace rapid.erp.EntityModel
                 else if (AppConstants.IsOracleDatabase == true)
                 {
                     //Oracle
-                    optionsBuilder.UseNpgsql(connectionString);
+                    optionsBuilder.UseOracle(connectionString);
                 }
             }
         }
