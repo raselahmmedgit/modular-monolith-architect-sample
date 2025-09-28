@@ -1,0 +1,26 @@
+﻿@model rapid.erp.ViewModel.Security.LoggedUserViewModel
+<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+    @if (Model.Role == AppIdentityDbEnums.ApplicationRoleEnum.Admin.ToDescriptionAttr())
+    {
+        <ul class="navbar-nav flex-grow-1">
+            <li class="nav-item dropdown">
+                <button class="nav-link float-left">Admin</button>
+                <button class="nav-pointer float-right pt-2 pb-2 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="@Url.Action("Index", "Company", new { Area = "Admin" })">Company</a>
+                </div>
+            </li>
+        </ul>
+    }
+    else if (Model.Role == AppIdentityDbEnums.ApplicationRoleEnum.User.ToDescriptionAttr())
+    {
+        <ul class="navbar-nav flex-grow-1">
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "Home", new { Area = "" })">Home</a>
+            </li>
+        </ul>
+    }
+    <div class="navbar-login float-right">
+        Welcome, @Model.UserName <a class="btn btn-danger" href="@Url.Action("LogOut", "Account", new { Area = "" })">Log Out</a>
+    </div>
+</div>

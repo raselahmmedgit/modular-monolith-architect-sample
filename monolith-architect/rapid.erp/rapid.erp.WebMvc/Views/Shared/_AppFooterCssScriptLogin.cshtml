@@ -1,0 +1,30 @@
+﻿<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; @DateTime.UtcNow.Year - <a target="_blank" href="#">Rapid Erp</a>
+    </div>
+</footer>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<environment include="Development">
+    <!--BEGIN Application Script-->
+    <script src="~/default/js/login.js" asp-append-version="true"></script>
+    <!--END Application Script-->
+</environment>
+<environment exclude="Development">
+    <script src="~/default/js/login.min.js" asp-append-version="true"></script>
+</environment>
+
+<script type="text/javascript">
+    !(function ($) {
+        // App Preloader
+        $(window).on('load', function () {
+            if ($('#appPreLoader').length) {
+                $('#appPreLoader').delay(100).fadeOut('slow', function () {
+                    //$(this).remove();
+                });
+            }
+        });
+    })(jQuery);
+</script>

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\rapid.erp.Core\rapid.erp.Core.csproj" />
+    <ProjectReference Include="..\rapid.erp.EntityModel\rapid.erp.EntityModel.csproj" />
+    <ProjectReference Include="..\rapid.erp.IManager\rapid.erp.IManager.csproj" />
+    <ProjectReference Include="..\rapid.erp.IRepository\rapid.erp.IRepository.csproj" />
+    <ProjectReference Include="..\rapid.erp.ViewModel\rapid.erp.ViewModel.csproj" />
+  </ItemGroup>
+
+</Project>

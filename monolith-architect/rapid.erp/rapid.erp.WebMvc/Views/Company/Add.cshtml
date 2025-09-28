@@ -1,0 +1,72 @@
+﻿@model rapid.erp.ViewModel.Admin.CompanyViewModel
+@{
+    ViewData["Title"] = "Add Company";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<script src="~/lib/CKEditor/ckeditor.js" type="text/javascript" language="javascript"></script>
+<div class="row mb-4">
+    <div class="col-10">
+        <h1 class="f-26">Add Company</h1>
+    </div>
+    <div class="col-2 text-right">
+        <a href="@Url.Action("Index", "Company", new { Area = "" })" title="Back" class="btn btn-secondary">Back</a>
+    </div>
+</div>
+
+@Html.RenderAlert("CompanyMessage")
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h2>@TempData["result"]</h2>
+                <form method="post" asp-action="Save" asp-controller="Company">
+                    <div class="form-body">
+
+                        <div class="form-group row">
+                            <label asp-for="NameEnglish" class="col-3 control-label"></label>
+                            <div class="col-4">
+                                <input asp-for="NameEnglish" class="form-control" />
+                                <span asp-validation-for="NameEnglish"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label asp-for="NameArabic" class="col-3 control-label"></label>
+                            <div class="col-4">
+                                <input asp-for="NameArabic" class="form-control" />
+                                <span asp-validation-for="NameArabic"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label asp-for="Address" class="col-3 control-label"></label>
+                            <div class="col-4">
+                                <input asp-for="Address" class="form-control" />
+                                <span asp-validation-for="Address"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label asp-for="Phone" class="col-3 control-label"></label>
+                            <div class="col-4">
+                                <input asp-for="Phone" class="form-control" />
+                                <span asp-validation-for="Phone"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-actions form-actions-new">
+                        <div class="row">
+                            <div class="col-12">
+                                <input type="submit" class="btn btn-primary" value="Submit" />
+                                <a href="@Url.Action("Index", "Company", new { Area = "" })" title="Back" class="btn btn-danger ml-2">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<rapid.erp.ViewModel.Security.ApplicationRoleViewModel>
+@{
+    ViewData["Title"] = "Role List";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row mb-4">
+    <div class="col-10">
+        <h1 class="f-26">Role List</h1>
+    </div>
+    <div class="col-2 text-right">
+        <a href="@Url.Action("CreateRole", "Admin", new { Area = "" })" title="Add" class="btn btn-primary">Create</a>
+    </div>
+</div>
+
+@Html.RenderAlert("RoleMessage")
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-sm table-bordered table-bordered">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th></th>
+                    </tr>
+                    @if (Model.Count() == 0)
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center">@MessageHelper.DataNotFound</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        foreach (var role in Model)
+                        {
+                            <tr>
+                                <td>@role.Id</td>
+                                <td>@role.Name</td>
+                                <td>
+                                    <form asp-action="DeleteRole" asp-route-id="@role.Id" method="post">
+                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

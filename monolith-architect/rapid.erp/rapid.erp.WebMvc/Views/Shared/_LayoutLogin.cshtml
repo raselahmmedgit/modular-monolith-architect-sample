@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <partial name="_AppHeadCssScriptLogin" />
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    <div id="appPreLoader"></div>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <partial name="_AppFooterCssScriptLogin" />
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿.blog{
+    padding:10px;
+}
+.blog-category-title {
+    color: #555;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-size: 1.1em;
+}
+.blog-posted-on {
+    color: #555;
+    /*font-family: 'Roboto', sans-serif;*/
+}
+.blog-title {
+    color: #334862;
+    /*font-family: 'Roboto', sans-serif;*/
+}
+.blog-description {
+    color: #555;
+    line-height: 1.6em;
+    /*font-family: 'Roboto', sans-serif;*/
+}
+
+.blog-widget-title {
+    color: #555;
+    /*font-family: 'Roboto', sans-serif;*/
+    text-transform: uppercase;
+    font-size:1.4em;
+}
+
+.blog-widget-recent-link {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    font-weight: 500;
+    color: #334862
+}
+.blog-widget-recent-date {
+    border: 1px solid #777
+}
+
+.is-divider {
+    height: 3px;
+    display: block;
+    background-color: rgba(0,0,0,.1);
+    margin: 1em 0 1em;
+    margin-top: 1em;
+    width: 100%;
+    max-width: 30px;
+}
+
+.primary.is-outline {
+    color: #446084;
+}
+.button.is-outline, input[type="submit"].is-outline, input[type="reset"].is-outline, input[type="button"].is-outline {
+    border: 2px solid currentColor;
+    background-color: transparent;
+}
+
+.button.is-outline {
+    line-height: 2.19em;
+}
+
+.btn-continue-reading {
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size: .97em;
+    letter-spacing: .03em;
+    cursor: pointer;
+    font-weight: bolder;
+    text-align: center;
+    text-decoration: none;
+    border: 3px solid #446084;
+    vertical-align: middle;
+    border-radius: 0;
+    text-shadow: none;
+    line-height: 2.4em;
+    min-height: 2.5em;
+    padding: 0 1.2em;
+    max-width: 100%;
+    transition: transform .3s,border .3s,background .3s,box-shadow .3s,opacity .3s,color .3s;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+}
+
+    .btn-continue-reading:hover {
+        background-color: #446084;
+        color:#fff;
+    }

@@ -1,0 +1,69 @@
+﻿@model rapid.erp.ViewModel.Admin.CompanyViewModel
+@{
+    ViewData["Title"] = "Company Detail";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row mb-4">
+    <div class="col-10">
+        <h1 class="f-26">Company Detail</h1>
+    </div>
+    <div class="col-2 text-right">
+        <a href="@Url.Action("Index", "Company", new { Area = "" })" title="Back" class="btn btn-secondary">Back</a>
+    </div>
+</div>
+
+@Html.RenderAlert("Company")
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <form action="javascript.void(0);" class="form form-horizontal">
+
+                    <div class="form-body">
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.NameEnglish, new { @class = "col-4 control-label" })
+                            <div class="col-8">
+                                @Html.DisplayFor(model => model.NameEnglish)
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.NameArabic, new { @class = "col-4 control-label" })
+                            <div class="col-8">
+                                @Html.DisplayFor(model => model.NameArabic)
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Address, new { @class = "col-4 control-label" })
+                            <div class="col-8">
+                                @Html.DisplayFor(model => model.Address)
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Phone, new { @class = "col-4 control-label" })
+                            <div class="col-8">
+                                @Html.DisplayFor(model => model.Phone)
+                            </div>
+                        </div>
+
+                        <div class="form-actions form-actions-new">
+                            <div class="row">
+                                <div class="col-12">
+                                    <a href="@Url.Action("Index", "Company", new { Area = "" })" title="Back" class="btn btn-danger">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

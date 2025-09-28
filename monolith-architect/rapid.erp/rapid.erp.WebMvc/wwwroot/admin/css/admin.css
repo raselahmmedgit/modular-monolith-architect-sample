@@ -1,0 +1,92 @@
+﻿.w-20 {
+    width: 20% !important;
+}
+
+.f-16 {
+    font-size: 16px !important;
+}
+
+.f-18 {
+    font-size: 18px !important;
+}
+
+.f-20 {
+    font-size: 20px !important;
+}
+
+.f-22 {
+    font-size: 22px !important;
+}
+
+.f-24 {
+    font-size: 24px !important;
+}
+
+.f-26 {
+    font-size: 26px !important;
+}
+
+.navbar-nav .nav-item {
+    border-right: 1px solid #e9ecef;
+    padding-right: .5rem !important;
+}
+
+    .navbar-nav .nav-item:last-child {
+        border-right: none;
+        padding-right: 0rem !important;
+    }
+
+    .navbar-nav .nav-item button, button:hover, button:active, button:focus {
+        border: none;
+        background: none;
+        outline: none;
+        cursor: default;
+    }
+
+    .navbar-nav .nav-item a a:hover, a:active, a:focus {
+        border: none;
+        background: none;
+        outline: none;
+    }
+
+    .navbar-nav .nav-item .nav-pointer {
+        cursor: pointer !important;
+    }
+
+.form-control-checkbox {
+    padding: 5px !important;
+    height: calc(1.5em + .5rem) !important;
+}
+
+.form-control-radio {
+    padding: 5px !important;
+    height: calc(1.5em + .5rem) !important;
+}
+
+.form-actions-new {
+    text-align: right !important;
+    border-top: 1px solid #ced4da;
+    padding: 15px 0 0 0;
+}
+
+.nestable .button-add {
+    cursor: pointer !important;
+    padding: 0px !important;
+    font-size: 20px !important;
+}
+
+.nestable .button-delete {
+    cursor: pointer !important;
+    padding: 0px !important;
+    font-size: 20px !important;
+}
+
+.nestable .button-edit {
+    cursor: pointer !important;
+    padding: 0px !important;
+    font-size: 20px !important;
+}
+
+.nestable .dd-item, .dd-empty, .dd-placeholder {
+    margin: 0px 0px 15px 0px !important;
+}
