@@ -12,15 +12,11 @@ namespace rapid.erp.Core.Security
                 var canConnect = context.Database.CanConnect();
                 if (canConnect)
                 {
-                    //context.Database.Migrate();
+                    var isCreated = context.Database.EnsureCreated();
 
-                    if (AppConstants.IsDatabaseCreated)
+                    if (isCreated)
                     {
-                        //if (AppConstants.IsMasterDataInserted == false)
-                        //{
-                        //    ModelBuilder modelBuilder = new ModelBuilder();
-                        //    AppIdentityDbContextSeedData.SeedData(modelBuilder);
-                        //}
+                        AppConstants.IsDatabaseCreated = true;
 
                         return true;
                     }

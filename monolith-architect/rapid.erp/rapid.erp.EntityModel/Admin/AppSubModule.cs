@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace rapid.erp.EntityModel.Security
+namespace rapid.erp.EntityModel.Admin
 {
     public class AppSubModule : IBaseEntityModel, IChangeTrackerEntity, IDeleteTrackerEntity
     {

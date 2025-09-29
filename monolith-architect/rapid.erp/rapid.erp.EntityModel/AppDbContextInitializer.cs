@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using rapid.erp.Core.Utility;
+﻿using rapid.erp.Core.Utility;
 
 namespace rapid.erp.EntityModel
 {
@@ -18,11 +17,10 @@ namespace rapid.erp.EntityModel
                     {
                         AppConstants.IsDatabaseCreated = true;
 
-                        //if (AppConstants.IsMasterDataInserted == false)
-                        //{
-                        //    //ModelBuilder modelBuilder = new ModelBuilder();
-                        //    //AppDbContextSeedData.SeedData(modelBuilder);
-                        //}
+                        if (AppConstants.IsMasterDataInserted == false)
+                        {
+                            AppDbContextSeedData.SeedData(context);
+                        }
 
                         return true;
                     }
@@ -34,5 +32,6 @@ namespace rapid.erp.EntityModel
                 }
             }
         }
+
     }
 }

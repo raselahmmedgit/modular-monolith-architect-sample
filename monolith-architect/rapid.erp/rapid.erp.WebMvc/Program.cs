@@ -9,6 +9,8 @@ BootStrapper.Run(builder.Services, builder.Configuration);
 
 var app = builder.Build();
 
+await BootStrapper.RunAppIdentityDbContextSeedData(app.Services);
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace rapid.erp.EntityModel.Security
+namespace rapid.erp.EntityModel.Admin
 {
     public class AppMenu : IBaseEntityModel, IChangeTrackerEntity, IDeleteTrackerEntity
     {

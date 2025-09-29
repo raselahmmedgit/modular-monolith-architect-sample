@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
-namespace rapid.erp.EntityModel.Security
+namespace rapid.erp.EntityModel.Admin
 {
     public class AppSetting : IBaseEntityModel, IChangeTrackerEntity, IDeleteTrackerEntity
     {

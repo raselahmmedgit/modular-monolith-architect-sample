@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using rapid.erp.Core.Helpers;
-using rapid.erp.Core.Security;
 using rapid.erp.Core.Utility;
 using rapid.erp.EntityModel;
 
@@ -18,8 +18,6 @@ namespace rapid.erp.Core.Dependency
 
                     if (isAppDatabaseCreated)
                     {
-                        var isAppIdentityDatabaseCreated = AppIdentityDbContextInitializer.CreateIfNotExists();
-
                         // Set value in memory
                         AppConfigHelper.Set("AppConfig:IsDatabaseCreated", "true");
 

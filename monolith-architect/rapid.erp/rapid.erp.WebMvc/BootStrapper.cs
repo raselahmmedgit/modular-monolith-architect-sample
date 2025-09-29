@@ -6,6 +6,8 @@ using rapid.erp.Core.Security;
 using rapid.erp.Core.Utility;
 using rapid.erp.EntityModel;
 using rapid.erp.ViewModel.Config;
+using System.Configuration;
+using System.Threading.Tasks;
 
 namespace rapid.erp.WebMvc
 {
@@ -80,6 +82,17 @@ namespace rapid.erp.WebMvc
 
         }
 
+        public static async Task RunAppIdentityDbContextSeedData(IServiceProvider servicesProvider) 
+        {
+            try
+            {
+               await AppIdentityDbContextSeedData.SeedDataAsync(servicesProvider);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         
     }
 }

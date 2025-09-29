@@ -17,8 +17,6 @@ namespace rapid.erp.Core.Dependency
 
                     if (isAppDatabaseCreated)
                     {
-                        var isAppIdentityDatabaseCreated = AppIdentityDbContextInitializer.CreateIfNotExists();
-
                         // Set value in memory
                         AppConfigHelper.Set("AppConfig:IsDatabaseCreated", "true");
 

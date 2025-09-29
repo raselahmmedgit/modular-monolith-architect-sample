@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using rapid.erp.Core.Utility;
 using rapid.erp.EntityModel.Admin;
-using rapid.erp.EntityModel.Security;
 
 namespace rapid.erp.EntityModel
 {
