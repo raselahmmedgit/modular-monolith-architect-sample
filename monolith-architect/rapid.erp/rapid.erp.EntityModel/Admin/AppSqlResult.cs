@@ -5,7 +5,7 @@ namespace rapid.erp.EntityModel.Admin
     public class AppSqlResult
     {
         [Key]
-        public int ResultId { get; set; }
+        public Guid ResultId { get; set; } = Guid.NewGuid();
 
         public bool Success { get; set; }
 

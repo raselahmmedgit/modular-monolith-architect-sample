@@ -8,7 +8,7 @@ namespace rapid.erp.EntityModel
         {
             if (!context.AppSetting.Any())
             {
-                context.AppSetting.Add(new AppSetting { AppSettingId = 1, AppSettingName = "Application Name", Key = "ApplicationName", Value = "Rapid ERP" });
+                context.AppSetting.Add(new AppSetting { AppSettingName = "Application Name", Key = "ApplicationName", Value = "Rapid ERP" });
                 context.SaveChanges();
             }
         }

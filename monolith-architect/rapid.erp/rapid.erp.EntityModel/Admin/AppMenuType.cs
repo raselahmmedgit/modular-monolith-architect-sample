@@ -11,7 +11,7 @@ namespace rapid.erp.EntityModel.Admin
         }
 
         [Key]
-        public int MenuTypeId { get; set; }
+        public Guid MenuTypeId { get; set; } = Guid.NewGuid();
         [StringLength(256)]
         public string MenuTypeName { get; set; }
 

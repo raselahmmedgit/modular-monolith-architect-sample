@@ -9,11 +9,11 @@ namespace rapid.erp.IManager
     {
         Task<List<CompanyViewModel>> GetCompanysAsync();
 
-        Task<CompanyViewModel> GetCompanyAsync(int key);
+        Task<CompanyViewModel> GetCompanyAsync(string key);
 
         Task<List<CompanyViewModel>> GetCompanysAsync(bool isActive, CancellationToken cancellationToken = default);
 
-        Task<CompanyEditViewModel> GetCompanyForEditAsync(int key);
+        Task<CompanyEditViewModel> GetCompanyForEditAsync(string key);
 
         Task<AppResult> UpdateCompanyAsync(CompanyEditViewModel model);
 
@@ -27,7 +27,7 @@ namespace rapid.erp.IManager
 
         Task<AppResult> CreateCompanyAsync(CompanyCreateViewModel model, CancellationToken cancellationToken = default);
 
-        Task<AppResult> DeleteCompanyAsync(int key, CancellationToken cancellationToken = default);
+        Task<AppResult> DeleteCompanyAsync(string key, CancellationToken cancellationToken = default);
 
         Task<List<SelectListItem>> GetCompanyDropDownViewModelAsync(bool isActive);
 

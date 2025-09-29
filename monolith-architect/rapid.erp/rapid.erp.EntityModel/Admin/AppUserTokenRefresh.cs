@@ -5,7 +5,7 @@ namespace rapid.erp.EntityModel.Admin
     public class AppUserTokenRefresh : IBaseEntityModel, IChangeTrackerEntity, IDeleteTrackerEntity
     {
         [Key]
-        public int UserTokenRefreshId { get; set; }
+        public Guid UserTokenRefreshId { get; set; } = Guid.NewGuid();
         public string? UserId { get; set; }
         public string? DeviceId { get; set; }
         public string? TokenHash { get; set; }

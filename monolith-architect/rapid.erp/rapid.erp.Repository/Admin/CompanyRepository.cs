@@ -42,11 +42,11 @@ namespace rapid.erp.Repository
             return null;
         }
 
-        public async Task<Company> GetCompanyAsync(int key, CancellationToken cancellationToken)
+        public async Task<Company> GetCompanyAsync(string key, CancellationToken cancellationToken)
         {
             if (cancellationToken.IsCancellationRequested == false)
             {
-                var data = await _context.Company.FirstOrDefaultAsync(x => x.CompanyId == key && x.IsDeleted != true);
+                var data = await _context.Company.FirstOrDefaultAsync(x => x.CompanyId.ToString() == key && x.IsDeleted != true);
                 return data;
             }
             return null;
@@ -62,36 +62,11 @@ namespace rapid.erp.Repository
             return null;
         }
 
-        public async Task<List<Company>> GetCompanyModelByCompanyIdsAsync(List<int> ids, CancellationToken cancellationToken = default)
+        public async Task<List<Company>> GetCompanyModelByCompanyIdsAsync(List<string> ids, CancellationToken cancellationToken = default)
         {
             if (cancellationToken.IsCancellationRequested == false)
             {
-                return await _context.Company.Where(x => ids.Contains(x.CompanyId)).ToListAsync();
-            }
-            return null;
-        }
-        
-        public async Task<SearchResult<IEnumerable<Company>>> GetCompanysSearchResultAsync(SearchModel searchModel, bool pagination, CancellationToken cancellationToken = default)
-        {
-            if (cancellationToken.IsCancellationRequested == false)
-            {
-                string? st = searchModel.SearchText?.Trim().ToLower();
-                var query = _context.Company.Where(x => x.IsDeleted != true).AsQueryable();
-                if (!string.IsNullOrEmpty(searchModel.SearchText))
-                {
-                    query = query.Where(x => x.NameEnglish.ToLower().Contains(st)
-                     || x.NameArabic.ToLower().Contains(st)
-                     || x.ShortEnglish.ToLower().Contains(st)
-                     || x.ShortArabic.ToLower().StartsWith(st));
-                }
-                var totalCount = await query.CountAsync();
-                var dataQuery = query.OrderByName(searchModel.SortColumn, searchModel.IsDescending);
-                if (pagination == true)
-                {
-                    dataQuery = dataQuery.Skip((searchModel.GetCurrentPage() - 1) * (searchModel.Rows)).Take(searchModel.Rows);
-                }
-                var data = await dataQuery.ToListAsync();
-                return new SearchResult<IEnumerable<Company>>(data, totalCount, data.Count, true, "");
+                return await _context.Company.Where(x => ids.Contains(x.CompanyId.ToString())).ToListAsync();
             }
             return null;
         }
@@ -186,12 +161,12 @@ namespace rapid.erp.Repository
             return AppResult.Fail(MessageHelper.UpdateFail);
         }
 
-        public async Task<AppResult> DeleteCompanyAsync(int key, CancellationToken cancellationToken = default)
+        public async Task<AppResult> DeleteCompanyAsync(string key, CancellationToken cancellationToken = default)
         {
             if (cancellationToken.IsCancellationRequested == false)
             {
                 var exists = await _context.Company.FirstOrDefaultAsync(
-                    x => x.CompanyId == key);
+                    x => x.CompanyId.ToString() == key);
                 if (exists != null)
                 {
                     return await DeleteOrVarifyRecordAsync<Company>(key, true);

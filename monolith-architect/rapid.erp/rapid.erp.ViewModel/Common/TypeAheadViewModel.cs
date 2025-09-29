@@ -8,7 +8,7 @@ namespace rapid.erp.ViewModel.Common
 {
     public class TypeAheadViewModel
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
     }
 }

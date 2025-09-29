@@ -33,7 +33,7 @@ namespace rapid.erp.Manager
             return pp;
         }
         
-        public async Task<CompanyViewModel> GetCompanyAsync(int key)
+        public async Task<CompanyViewModel> GetCompanyAsync(string key)
         {
             var data = await _iCompanyRepository.GetCompanyAsync(key);
             var pp = _mapper.Map<Company, CompanyViewModel>(data);
@@ -47,7 +47,7 @@ namespace rapid.erp.Manager
             return pp;
         }
 
-        public async Task<CompanyEditViewModel> GetCompanyForEditAsync(int key)
+        public async Task<CompanyEditViewModel> GetCompanyForEditAsync(string key)
         {
             var data = await _iCompanyRepository.GetCompanyAsync(key);
             var pp = _mapper.Map<Company, CompanyEditViewModel>(data);
@@ -63,7 +63,7 @@ namespace rapid.erp.Manager
 
         public async Task<SearchResult<IEnumerable<CompanyViewModel>>> GetCompanysSearchResultAsync(SearchModel searchModel, bool pagination)
         {
-            var data = await _iCompanyRepository.GetCompanysSearchResultAsync(searchModel, pagination);
+            var data = await _iCompanyRepository.GetCompanysSearchResultAsync(searchModel);
             var dataMapped = _mapper.Map<IEnumerable<Company>, IEnumerable<CompanyViewModel>>(data.Value);
             var result = new SearchResult<IEnumerable<CompanyViewModel>>(dataMapped, data.TotalRows, data.PageRows, true, "");
             return result;
@@ -114,7 +114,7 @@ namespace rapid.erp.Manager
             return data;
         }
         
-        public async Task<AppResult> DeleteCompanyAsync(int key, CancellationToken cancellationToken = default)
+        public async Task<AppResult> DeleteCompanyAsync(string key, CancellationToken cancellationToken = default)
         {
             var data = await _iCompanyRepository.DeleteCompanyAsync(key);
             return data;
@@ -134,7 +134,7 @@ namespace rapid.erp.Manager
 
             if (viewList.Any())
             {
-                var dataList = viewList.Select(s => new TypeAheadViewModel() { Id = s.CompanyId, Name = s.NameEnglish }).ToList();
+                var dataList = viewList.Select(s => new TypeAheadViewModel() { Id = s.CompanyId.ToString(), Name = s.NameEnglish }).ToList();
 
                 return AppResult.Ok(MessageHelper.DataFound, parentId: 0, parentName: "", data: dataList);
             }

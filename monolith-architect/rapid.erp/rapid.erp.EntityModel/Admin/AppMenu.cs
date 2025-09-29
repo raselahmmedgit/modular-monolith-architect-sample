@@ -6,7 +6,7 @@ namespace rapid.erp.EntityModel.Admin
     public class AppMenu : IBaseEntityModel, IChangeTrackerEntity, IDeleteTrackerEntity
     {
         [Key]
-        public int MenuId { get; set; }
+        public Guid MenuId { get; set; } = Guid.NewGuid();
         [StringLength(256)]
         public string MenuName { get; set; }
         public int? ModuleId { get; set; }

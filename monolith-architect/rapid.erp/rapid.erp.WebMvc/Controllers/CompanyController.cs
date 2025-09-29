@@ -118,7 +118,7 @@ namespace rapid.erp.WebMvc.Controllers
         }
 
         [ResponseCache(NoStore = true, Duration = 0)]
-        public async Task<IActionResult> Edit(int id)
+        public async Task<IActionResult> Edit(string id)
         {
             try
             {
@@ -182,7 +182,7 @@ namespace rapid.erp.WebMvc.Controllers
         }
 
         [ResponseCache(NoStore = true, Duration = 0)]
-        public async Task<IActionResult> Details(int id)
+        public async Task<IActionResult> Details(string id)
         {
             try
             {
@@ -246,12 +246,12 @@ namespace rapid.erp.WebMvc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(string id)
         {
             var result = new AppResult();
             try
             {
-                if (id > 0)
+                if (!string.IsNullOrEmpty(id))
                 {
                     result = await _iCompanyManager.DeleteCompanyAsync(id);
                 }

@@ -6,7 +6,7 @@ namespace rapid.erp.EntityModel.Admin
     public class AppSetting : IBaseEntityModel, IChangeTrackerEntity, IDeleteTrackerEntity
     {
         [Key]
-        public int AppSettingId { get; set; }
+        public Guid AppSettingId { get; set; } = Guid.NewGuid();
         [StringLength(256)]
         public string AppSettingName { get; set; }
         public string? Key { get; set; }

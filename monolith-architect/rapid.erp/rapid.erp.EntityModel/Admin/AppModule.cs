@@ -11,7 +11,7 @@ namespace rapid.erp.EntityModel.Admin
         }
 
         [Key]
-        public int ModuleId { get; set; }
+        public Guid ModuleId { get; set; } = Guid.NewGuid();
         [StringLength(256)]
         public string ModuleName { get; set; }
         public string ActionName { get; set; }

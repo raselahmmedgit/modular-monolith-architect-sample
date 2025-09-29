@@ -5,7 +5,7 @@ namespace rapid.erp.EntityModel.Admin
     public class Company : IBaseEntityModel, IChangeTrackerEntity, IDeleteTrackerEntity
     {
         [Key]
-        public int CompanyId { get; set; }
+        public Guid CompanyId { get; set; } = Guid.NewGuid();
         public int DivisionId { get; set; }
         public string? NameEnglish { get; set; }
         public string? ShortEnglish { get; set; }

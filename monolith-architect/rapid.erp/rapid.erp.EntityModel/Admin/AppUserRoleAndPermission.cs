@@ -5,7 +5,7 @@ namespace rapid.erp.EntityModel.Admin
     public class AppUserRoleAndPermission : IBaseEntityModel, IChangeTrackerEntity, IDeleteTrackerEntity
     {
         [Key]
-        public int UserRoleAndPermissionId { get; set; }
+        public Guid UserRoleAndPermissionId { get; set; } = Guid.NewGuid();
         public string RoleId { get; set; }
         public int? MenuId { get; set; }
         public int? SubMenuId { get; set; }
