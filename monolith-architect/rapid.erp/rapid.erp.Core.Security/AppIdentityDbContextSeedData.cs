@@ -10,12 +10,13 @@ namespace rapid.erp.Core.Security
         {
             using (var scope = servicesProvider.CreateScope())
             {
-                var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-                var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
                 var context = scope.ServiceProvider.GetRequiredService<AppIdentityDbContext>();
 
                 // Apply Migrate
                 await context.Database.MigrateAsync();
+
+                var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<ApplicationRole>>();
+                var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
                 // Seed Data - Roles
                 var roles = new[] { "Admin", "Manager", "User" };
@@ -23,7 +24,14 @@ namespace rapid.erp.Core.Security
                 {
                     if (!await roleManager.RoleExistsAsync(role))
                     {
-                        await roleManager.CreateAsync(new IdentityRole(role));
+                        var applicationRole = new ApplicationRole
+                        {
+                            Id = role,
+                            Name = role,
+                            IsActive = true
+                        };
+
+                        await roleManager.CreateAsync(applicationRole);
                     }
                 }
 
@@ -32,7 +40,7 @@ namespace rapid.erp.Core.Security
                 var adminUser = await userManager.FindByEmailAsync(adminEmail);
                 if (adminUser == null)
                 {
-                    adminUser = new IdentityUser
+                    adminUser = new ApplicationUser
                     {
                         UserName = adminEmail,
                         Email = adminEmail,
@@ -52,7 +60,7 @@ namespace rapid.erp.Core.Security
                 var managerUser = await userManager.FindByEmailAsync(managerEmail);
                 if (managerUser == null)
                 {
-                    managerUser = new IdentityUser
+                    managerUser = new ApplicationUser
                     {
                         UserName = managerEmail,
                         Email = managerEmail,
@@ -73,7 +81,7 @@ namespace rapid.erp.Core.Security
                 var employeeUser = await userManager.FindByEmailAsync(employeeEmail);
                 if (employeeUser == null)
                 {
-                    employeeUser = new IdentityUser
+                    employeeUser = new ApplicationUser
                     {
                         UserName = employeeEmail,
                         Email = employeeEmail,

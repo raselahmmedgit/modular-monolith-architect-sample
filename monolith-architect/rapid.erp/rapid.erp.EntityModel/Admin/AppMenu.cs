@@ -9,9 +9,9 @@ namespace rapid.erp.EntityModel.Admin
         public Guid MenuId { get; set; } = Guid.NewGuid();
         [StringLength(256)]
         public string MenuName { get; set; }
-        public int? ModuleId { get; set; }
-        public int? SubModuleId { get; set; }
-        public int? MenuTypeId { get; set; }
+        public Guid? ModuleId { get; set; }
+        public Guid? SubModuleId { get; set; }
+        public Guid? MenuTypeId { get; set; }
         public string ActionName { get; set; }
         public string ControllerName { get; set; }
         public string AreaName { get; set; }

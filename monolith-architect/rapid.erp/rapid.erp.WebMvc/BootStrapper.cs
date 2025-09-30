@@ -82,13 +82,14 @@ namespace rapid.erp.WebMvc
 
         }
 
-        public static async Task RunAppIdentityDbContextSeedData(IServiceProvider servicesProvider) 
+        public static async Task RunDbContextSeedData(IServiceProvider servicesProvider) 
         {
             try
             {
-               await AppIdentityDbContextSeedData.SeedDataAsync(servicesProvider);
+                await AppIdentityDbContextSeedData.SeedDataAsync(servicesProvider);
+                await AppDbContextSeedData.SeedDataAsync(servicesProvider);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }

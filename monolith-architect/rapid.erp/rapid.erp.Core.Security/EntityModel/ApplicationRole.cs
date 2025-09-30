@@ -1,11 +1,4 @@
-﻿using rapid.erp.Core.Security.EntityModel;
-
-using Microsoft.AspNetCore.Identity;
-
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace rapid.erp.Core.Security
 {
@@ -14,6 +7,7 @@ namespace rapid.erp.Core.Security
     /// </summary>
     public class ApplicationRole : IdentityRole<string>
     {
+        
         public bool IsActive { get; set; }
         public DateTime CreatedDate { get; set; }
         public string CreatedBy { get; set; }

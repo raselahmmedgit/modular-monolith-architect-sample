@@ -13,7 +13,7 @@ namespace rapid.erp.EntityModel.Admin
         public Guid SubModuleId { get; set; } = Guid.NewGuid();
         [StringLength(256)]
         public string SubModuleName { get; set; }
-        public int ModuleId { get; set; }
+        public Guid ModuleId { get; set; }
         public string ActionName { get; set; }
         public string ControllerName { get; set; }
         public string AreaName { get; set; }

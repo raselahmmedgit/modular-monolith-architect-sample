@@ -18,11 +18,11 @@ namespace rapid.erp.Core.Dependency
 
                     if (isAppDatabaseCreated)
                     {
-                        // Set value in memory
-                        AppConfigHelper.Set("AppConfig:IsDatabaseCreated", "true");
+                        //// Set value in memory
+                        //AppConfigHelper.Set("AppConfig:IsDatabaseCreated", "true");
 
-                        // Persist to file
-                        AppConfigHelper.Persist("AppConfig:IsDatabaseCreated", "true");
+                        //// Persist to file
+                        //AppConfigHelper.Persist("AppConfig:IsDatabaseCreated", "true");
                     }
                 }
 

@@ -17,11 +17,6 @@ namespace rapid.erp.EntityModel
                     {
                         AppConstants.IsDatabaseCreated = true;
 
-                        if (AppConstants.IsMasterDataInserted == false)
-                        {
-                            AppDbContextSeedData.SeedData(context);
-                        }
-
                         return true;
                     }
                     return false;

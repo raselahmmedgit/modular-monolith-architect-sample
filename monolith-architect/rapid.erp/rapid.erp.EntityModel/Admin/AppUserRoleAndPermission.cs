@@ -7,7 +7,7 @@ namespace rapid.erp.EntityModel.Admin
         [Key]
         public Guid UserRoleAndPermissionId { get; set; } = Guid.NewGuid();
         public string RoleId { get; set; }
-        public int? MenuId { get; set; }
+        public Guid? MenuId { get; set; }
         public int? SubMenuId { get; set; }
         public bool CanView { get; set; }
         public bool CanCreate { get; set; }

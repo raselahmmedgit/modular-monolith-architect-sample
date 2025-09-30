@@ -1,15 +1,25 @@
-﻿using rapid.erp.EntityModel.Admin;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using rapid.erp.EntityModel.Admin;
 
 namespace rapid.erp.EntityModel
 {
     public static class AppDbContextSeedData
     {
-        public static void SeedData(AppDbContext context)
+        public static async Task SeedDataAsync(IServiceProvider servicesProvider)
         {
-            if (!context.AppSetting.Any())
+            using (var scope = servicesProvider.CreateScope())
             {
-                context.AppSetting.Add(new AppSetting { AppSettingName = "Application Name", Key = "ApplicationName", Value = "Rapid ERP" });
-                context.SaveChanges();
+                var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+
+                // Apply Migrate
+                await context.Database.MigrateAsync();
+
+                if (!context.AppSetting.Any())
+                {
+                    await context.AppSetting.AddAsync(new AppSetting { AppSettingName = "Application Name", Key = "ApplicationName", Value = "Rapid ERP" });
+                    await context.SaveChangesAsync();
+                }
             }
         }
     }
