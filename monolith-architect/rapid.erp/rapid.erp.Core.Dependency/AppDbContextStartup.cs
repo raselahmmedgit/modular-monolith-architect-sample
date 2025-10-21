@@ -1,6 +1,4 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using rapid.erp.Core.Helpers;
 using rapid.erp.Core.Utility;
 using rapid.erp.EntityModel;
 

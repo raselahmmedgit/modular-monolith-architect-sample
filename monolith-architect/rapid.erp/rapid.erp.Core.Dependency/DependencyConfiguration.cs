@@ -69,6 +69,7 @@ namespace rapid.erp.Core.Dependency
 
             //services.AddDatabaseDeveloperPageExceptionFilter();
 
+            //AppDbContextStartup.Run(configuration);
             AppIdentityDbContextStartup.Run(configuration);
 
         }

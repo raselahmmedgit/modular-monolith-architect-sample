@@ -20,7 +20,7 @@
 
     public class ChangeTrackerEntity : IChangeTrackerEntity
     {
-        public DateTime CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
         public string? CreatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public string? UpdatedBy { get; set; }
