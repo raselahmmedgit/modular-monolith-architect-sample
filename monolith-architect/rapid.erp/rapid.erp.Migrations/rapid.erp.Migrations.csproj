@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\rapid.erp.Core.Security\rapid.erp.Core.Security.csproj" />
+    <ProjectReference Include="..\rapid.erp.EntityModel\rapid.erp.EntityModel.csproj" />
+  </ItemGroup>
+
+</Project>

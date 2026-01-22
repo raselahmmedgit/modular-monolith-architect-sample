@@ -55,6 +55,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "rapid.erp.Web", "rapid.erp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rapid.erp.WebMvc", "rapid.erp.WebMvc\rapid.erp.WebMvc.csproj", "{DDD011EA-A4C6-48F9-81F2-D3D18F85DD57}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rapid.erp.Migrations", "rapid.erp.Migrations\rapid.erp.Migrations.csproj", "{D6DF4CA6-4953-4E42-A958-8DB3F3DA2A34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{DDD011EA-A4C6-48F9-81F2-D3D18F85DD57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDD011EA-A4C6-48F9-81F2-D3D18F85DD57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDD011EA-A4C6-48F9-81F2-D3D18F85DD57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6DF4CA6-4953-4E42-A958-8DB3F3DA2A34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6DF4CA6-4953-4E42-A958-8DB3F3DA2A34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6DF4CA6-4953-4E42-A958-8DB3F3DA2A34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6DF4CA6-4953-4E42-A958-8DB3F3DA2A34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -166,6 +172,7 @@ Global
 		{98E97466-8FC6-4C13-8AC4-43B67DF5DDAA} = {F9B03A98-D364-4484-AA5A-4B79AAE852D8}
 		{EF689FE1-731E-4AF3-8FB0-2B0AD750D53B} = {B70E0A8C-ADC5-4315-A725-E320EF6F00BF}
 		{DDD011EA-A4C6-48F9-81F2-D3D18F85DD57} = {B70E0A8C-ADC5-4315-A725-E320EF6F00BF}
+		{D6DF4CA6-4953-4E42-A958-8DB3F3DA2A34} = {F9B03A98-D364-4484-AA5A-4B79AAE852D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6C6ECD7-5CEE-4BF1-BF8F-3708025948E1}
